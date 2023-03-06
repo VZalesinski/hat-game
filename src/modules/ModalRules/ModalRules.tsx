@@ -25,10 +25,19 @@ export const ModalRules: FC = () => {
 							<AntDesign name='infocirlce' size={32} color='#074F57' />
 						</View>
 						<Text className='text-left text-xs mt-3 font-roboto text-blueDark'>
-							В игре участвует от 2 и более команд, с количеством от 2 и более
-							человек. Каждый игрок записывает слова которые закидываются в
-							"Шляпу". Игра проходит в 3 этапа, в каждом надо отгадать все
-							слова, которые находятся в "Шляпе".
+							Количество команд - 2 и больше
+						</Text>
+						<Text className='text-left text-xs mt-3 font-roboto text-blueDark'>
+							Оптимальное количество игроков в каждой команде - 2
+						</Text>
+						<Text className='text-left text-xs mt-3 font-roboto text-blueDark'>
+							Перед началом игры каждый игрок пишет на карточках слова. В
+							оригинальной версии Шляпы используются персонажи и личности, но вы
+							можете также использовать любые существительные и словосочетания.
+						</Text>
+						<Text className='text-left text-xs mt-3 font-roboto text-blueDark'>
+							Игра состоит из трёх этапов. На каждом этапе используются слова,
+							написанные участниками на карточках перед началом игры.
 						</Text>
 					</View>
 
@@ -47,38 +56,47 @@ export const ModalRules: FC = () => {
 						</View>
 						<Text className='text-xs mt-3 font-roboto text-blueDark'>
 							<Text className=' text-sm font-robotoBold '>1. Alias. </Text>
-							Надо суметь объяснить другими словами разгадываемое слово.
+							Команды играют по очереди. В свой ход один из участников команды
+							должен словами объяснить как можно больше карточек. Отгадывают
+							только участники играющей команды. Сбрасывать карточки обратно в
+							шляпу нельзя, не сдавайтесь, проявляйте фантазию!
 						</Text>
 
 						<Text className='text-xs mb-3 font-roboto text-blueDark'>
-							<Text className=' text-sm font-robotoBold'>Запрещается: </Text>
-							Использование однокоренных слов, явное указывание на предмет
-							который отгадывают, перевод с иностранных слов.
+							<Text className=' text-sm font-robotoBold'>Запрещено: </Text>
+							Использование однокоренных слов и иностранных аналогов слов,
+							написанных на карточках.
 						</Text>
 
-						<Text className='text-xs font-roboto text-blueDark'>
+						<Text className='text-xs mb-3 font-roboto text-blueDark'>
+							<Text className=' text-sm font-robotoBold'>Лайфхак: </Text>
+							Если вы не знаете слово, написанное на карточке, попробуйте
+							объяснить его по частям или использовать созвучное слово.
+						</Text>
+
+						<Text className='text-xs mb-3 font-roboto text-blueDark'>
 							<Text className='font-robotoBold text-sm'>2. Крокодил. </Text>
-							При помощи мимики, жестов или танцев показать своим товарищам
-							задуманное слово.
+							Объяснить слово с помощью мимики и жестов.
 						</Text>
 
 						<Text className='text-xs mb-3 font-roboto text-blueDark'>
-							<Text className='font-robotoBold text-sm'> Запрещается: </Text>
-							Издавать звуки, говорить.
+							<Text className='font-robotoBold text-sm'> Запрещено: </Text>
+							Издавать звуки, говорить, показывать буквы
 						</Text>
 
 						<Text className='text-xs font-roboto text-blueDark'>
 							<Text className='font-robotoBold text-sm'>3. Блицкриг. </Text>
-							Объяснить слово ОДНИМ словом. В раундах дается на половну меньше
-							времени, чем в предыдущих этапах. Команда может обсуждать в слух
-							предположения. Если окончательный ответ был неверным, раунд
-							завершается.
+							Объяснить написанное на карточке одним словом. На этом этапе
+							каждой команде дается в два раза меньше времени, чем на
+							предыдущих. Играющая команда может обсуждать в слух предположения
+							и озвучивать один вариант. Если окончательный ответ неверный,
+							раунд автоматически завершается и ход переходит другой команде. .
 						</Text>
 
 						<Text className='text-xs font-roboto text-blueDark'>
-							<Text className='font-robotoBold text-sm'> Запрещается: </Text>
-							Использование словосочетаний однокоренных слов, явное указывание
-							на предмет который отгадывают, перевод с иностранных слов.
+							<Text className='font-robotoBold text-sm'> Запрещено: </Text>
+							Использовать словосочетания, однокоренные слова и иностранные
+							аналоги слова, написанного на карточке.
 						</Text>
 					</View>
 
@@ -91,7 +109,8 @@ export const ModalRules: FC = () => {
 							<FontAwesome5 name='award' size={32} color='#074F57' />
 						</View>
 						<Text className='text-xs mt-3 font-roboto text-blueDark'>
-							Набрать наибольшее количество очков за игру.
+							Побеждает команда, набравшая наибольшее количество очков по итогу
+							всех трех этапов.
 						</Text>
 					</View>
 				</ScrollView>

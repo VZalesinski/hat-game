@@ -21,7 +21,7 @@ export default function App() {
 		<>
 			<Provider store={store}>
 				<RootNavigator />
-				<StatusBar backgroundColor={'#E1F2FE'} />
+				<StatusBar backgroundColor={'#000'} />
 			</Provider>
 		</>
 	)
