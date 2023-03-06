@@ -32,9 +32,19 @@ export const RoundModal: FC<RoundModalProps> = ({ roundName }) => {
 					<Text className='text-2xl text-center font-robotoBold text-blueDark mb-3'>
 						Запрещено:
 					</Text>
-					<Text className='text-lg font-roboto text-center text-blueDark'>
+					<Text className='text-lg font-roboto text-center text-blueDark mb-5'>
 						{roundName?.ban}
 					</Text>
+					{roundName?.lifehack && (
+						<>
+							<Text className='text-2xl text-center font-robotoBold text-blueDark mb-3'>
+								Лайфхак:
+							</Text>
+							<Text className='text-lg font-roboto text-center text-blueDark'>
+								{roundName?.lifehack}
+							</Text>
+						</>
+					)}
 				</ScrollView>
 			</Popup>
 		</>
