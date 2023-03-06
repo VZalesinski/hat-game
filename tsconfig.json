@@ -1,6 +1,32 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    "jsx": "react-native",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@modules/*": ["modules/*"],
+      "@screens/*": ["screens/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@store/*": ["store/*"],
+
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "additional.d.ts",
+    ".src/**/*.ts",
+    ".src/**/*.js",
+    ".src/**/*.tsx",
+    "./App.tsx",
+    "./src/**/*",
+    ".src/**/*",
+    ".src/**/*.*",
+    "app.d.ts",
+    "tailwind.config.js",
+    "global.d.ts"
+ ],
+  "exclude": ["node_modules"]
 }
