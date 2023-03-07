@@ -4,7 +4,7 @@ import { RootStackParamList } from 'router/RootNavigator'
 import type { FC } from 'react'
 import React from 'react'
 import { MyButton, Title } from '@components/index'
-import { ModalRules, ToNewGame } from '@modules/index'
+import { ModalRules, ToContinueGame, ToNewGame } from '@modules/index'
 import icon from '../../../assets/icon.png'
 
 type StartScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>
@@ -17,7 +17,7 @@ export const StartScreen: FC<StartScreenProps> = ({ navigation }) => {
 				<Title title='Шляпа' />
 			</View>
 			<View className='w-full mb-5'>
-				<MyButton text='Продолжить' fill borderColor='border-orange' />
+				<ToContinueGame />
 			</View>
 			<View className='w-full mb-5'>
 				<ToNewGame />

@@ -15,14 +15,16 @@ type SettingsScreenProps = NativeStackScreenProps<
 
 export const SettingsScreen: FC<SettingsScreenProps> = ({ navigation }) => {
 	const dispatch = useAppDispatch()
+
+	const onButtonPress = () => {
+		dispatch(resetGame())
+		navigation.goBack()
+	}
 	return (
 		<View className='bg-blueDark h-full px-5 pt-32 pb-7'>
 			<TouchableOpacity
 				className='w-max absolute z-50 top-3 left-3 p-3'
-				onPress={() => {
-					dispatch(resetGame())
-					navigation.goBack()
-				}}
+				onPress={() => onButtonPress()}
 			>
 				<Ionicons name='arrow-back-circle' size={32} color='#F18F01' />
 			</TouchableOpacity>

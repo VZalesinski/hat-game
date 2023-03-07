@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export interface RoundType {
   name: string,
@@ -54,6 +55,20 @@ export const roundsSlice = createSlice({
     },
     toggleComplete: (state, action: PayloadAction<number>) => {
       state.allRounds[action.payload].completed = true
+      const storeData = async (key: string, value: RoundType[]) => {
+        try {
+          await AsyncStorage.setItem(key, JSON.stringify(value))
+        } catch (e) {
+          console.log(e)
+        }
+      }
+      if (state.allRounds) storeData('@all-rounds', state.allRounds)
+
+      // if (state.allRounds[action.payload].id === 0) storeData('@round1', state.allRounds[action.payload])
+
+      // if (state.allRounds[action.payload].id === 1) storeData('@round2', state.allRounds[action.payload])
+
+      // if (state.allRounds[action.payload].id === 2) storeData('@round2', state.allRounds[action.payload])
     }
   },
 })

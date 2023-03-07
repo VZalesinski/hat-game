@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import type { FC } from 'react'
-import { View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { useAppDispatch, useAppSelector } from '@hooks/index'
 import { RoundModal } from '../RoundModal/RoundModal'
 import { RoundButton, RoundCard, Timer } from '@components/index'

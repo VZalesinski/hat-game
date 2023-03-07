@@ -9,22 +9,17 @@ interface NavType {
 	navigate: (value: string) => void
 }
 
-export const ToSettings: FC = () => {
+export const ToContinueGame: FC = () => {
 	const { navigate } = useNavigation<NavType>()
-	const teams = useAppSelector(state => state.teams.teams)
+	const isContinueGame = useAppSelector(state => state.game.continueGame)
 
-	return (
-		<TouchableOpacity
-			disabled={teams.length <= 1}
-			onPress={() => {
-				navigate('Settings')
-			}}
-		>
-			<MyButton
-				text='Далее'
-				fill={teams.length <= 1}
-				borderColor={teams.length <= 1 ? 'border-orange' : ''}
-			/>
+	return isContinueGame ? (
+		<TouchableOpacity onPress={() => navigate('Score')}>
+			<MyButton text='Продолжить' />
+		</TouchableOpacity>
+	) : (
+		<TouchableOpacity disabled={true}>
+			<MyButton text='Продолжить' fill borderColor='border-orange' />
 		</TouchableOpacity>
 	)
 }

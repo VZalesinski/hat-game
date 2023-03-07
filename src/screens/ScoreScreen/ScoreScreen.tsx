@@ -8,6 +8,7 @@ import { ScoreModule } from '@modules/index'
 import { MyButton } from '@components/index'
 import { useAppSelector } from '@hooks/index'
 import { BackHandler } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 type ScoreScreenProps = NativeStackScreenProps<RootStackParamList, 'Score'>
 
@@ -38,6 +39,20 @@ export const ScoreScreen: FC<ScoreScreenProps> = ({ navigation }) => {
 	const isGameFinished = useAppSelector(state =>
 		state.rounds.allRounds.every(round => round.completed === true)
 	)
+
+	// const getData = async () => {
+	// 	try {
+	// 		const jsonValue = await AsyncStorage.getItem('@key')
+	// 		return jsonValue != null ? JSON.parse(jsonValue) : null
+	// 	} catch(e) {
+	// 		// read error
+	// 	}
+	// }
+
+	// const isGameFinished = ()=>{
+	// 	const array = getData()
+	// 	return array.then(data=>data.every(round => round.completed === true))
+	// }
 
 	return (
 		<View className='bg-blueLight h-full px-5 pt-14 pb-7'>

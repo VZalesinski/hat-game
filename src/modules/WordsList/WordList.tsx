@@ -1,10 +1,11 @@
 import React from 'react'
 import type { FC } from 'react'
-import { useAppSelector } from '@hooks/index'
+import { useAppDispatch, useAppSelector } from '@hooks/index'
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { MyButton, WordItem } from '@components/index'
 import { WordsModal } from '../WordsModal/WordsModal'
 import { useNavigation } from '@react-navigation/native'
+import { setContinueGame } from '@store/gameSlice'
 
 interface NavType {
 	navigate: (value: string) => void
@@ -12,7 +13,7 @@ interface NavType {
 
 export const WordsList: FC = () => {
 	const { navigate } = useNavigation<NavType>()
-
+	const dispatch = useAppDispatch()
 	const allWords = useAppSelector(state => state.words.allWords)
 	const players = useAppSelector(state => state.game.players)
 	const teams = useAppSelector(state => state.teams.teams)
@@ -57,11 +58,18 @@ export const WordsList: FC = () => {
 				</View>
 			</ScrollView>
 			<TouchableOpacity
-				className={`mt-5 ${isDisabled ? 'opacity-60' : ''}`}
+				className='mt-5'
 				disabled={isDisabled}
-				onPress={() => navigate('Score')}
+				onPress={() => {
+					dispatch(setContinueGame())
+					navigate('Score')
+				}}
 			>
-				<MyButton text='Начать' />
+				<MyButton
+					text='Начать'
+					fill={isDisabled}
+					borderColor={isDisabled ? 'border-orange' : ''}
+				/>
 			</TouchableOpacity>
 		</>
 	)
