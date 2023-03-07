@@ -42,7 +42,7 @@ export const WordsList: FC = () => {
 			: true
 	return (
 		<>
-			<View className='pt-5'>
+			<View>
 				{isDisabled && (
 					<Text className='text-center font-roboto text-lg text-whiteMain mb-5'>
 						Каждый игрок должен добавить {wordsPerPlayer} {pronunciation}

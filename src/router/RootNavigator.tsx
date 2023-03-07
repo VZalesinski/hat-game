@@ -28,7 +28,7 @@ export const RootNavigator = () => {
 		<NavigationContainer>
 			<RootStack.Navigator
 				initialRouteName='Home'
-				screenOptions={{ headerShown: false }}
+				screenOptions={{ headerShown: false, animation: 'slide_from_right' }}
 			>
 				<RootStack.Screen name='Home' component={StartScreen} />
 				<RootStack.Screen name='NewGame' component={NewGameScreen} />

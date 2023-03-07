@@ -35,37 +35,38 @@ export const SetSettings: FC = () => {
 	}
 
 	return (
-		<View className='  py-5 mb-5 '>
-			<SliderRange
-				classNames='mb-5'
-				text='Игроков в команде'
-				value={players}
-				setValue={setPlayers}
-				minValue={2}
-				maxValue={10}
-				step={1}
-			/>
+		<View className='justify-between flex-1'>
+			<View>
+				<SliderRange
+					classNames='mb-5'
+					text='Игроков в команде'
+					value={players}
+					setValue={setPlayers}
+					minValue={2}
+					maxValue={10}
+					step={1}
+				/>
 
-			<SliderRange
-				classNames='mb-5'
-				text='Слова на человека'
-				value={words}
-				setValue={setWords}
-				minValue={1}
-				maxValue={20}
-				step={1}
-			/>
+				<SliderRange
+					classNames='mb-5'
+					text='Слова на человека'
+					value={words}
+					setValue={setWords}
+					minValue={1}
+					maxValue={20}
+					step={1}
+				/>
 
-			<SliderRange
-				classNames='mb-10'
-				text='Время на раунд (сек.)'
-				value={timer}
-				setValue={setTimer}
-				minValue={10}
-				maxValue={100}
-				step={10}
-			/>
-
+				<SliderRange
+					classNames='mb-10'
+					text='Время на раунд (сек.)'
+					value={timer}
+					setValue={setTimer}
+					minValue={10}
+					maxValue={100}
+					step={10}
+				/>
+			</View>
 			<TouchableOpacity onPress={goToNextPage}>
 				<MyButton text='Далее' />
 			</TouchableOpacity>
