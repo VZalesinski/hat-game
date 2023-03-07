@@ -7,3 +7,5 @@ Team-individual or paired intellectual game in which the player must explain as 
 * Tailwind (nativewind)
 * Redux Toolkit
 * React Native Navigation
+* AsyncStorage
+* Redux-persist
