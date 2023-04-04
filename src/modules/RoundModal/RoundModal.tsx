@@ -29,10 +29,10 @@ export const RoundModal: FC<RoundModalProps> = ({ roundName }) => {
 					<Text className='text-lg text-center font-roboto text-blueDark mb-5'>
 						{roundName?.description}
 					</Text>
-					<Text className='text-2xl text-center font-robotoBold text-blueDark mb-3'>
+					<Text className='text-2xl text-center font-robotoBold text-redDark mb-3'>
 						Запрещено:
 					</Text>
-					<Text className='text-lg font-roboto text-center text-blueDark mb-5'>
+					<Text className='text-lg font-roboto text-center text-redDark mb-5'>
 						{roundName?.ban}
 					</Text>
 					{roundName?.lifehack && (

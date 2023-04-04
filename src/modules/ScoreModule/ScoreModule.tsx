@@ -13,7 +13,6 @@ export const ScoreModule = () => {
 				</Text>
 			)}
 			keyExtractor={item => item.id}
-			className='border-t border-blueDark pt-5'
 		/>
 	)
 }

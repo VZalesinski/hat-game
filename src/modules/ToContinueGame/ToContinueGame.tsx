@@ -17,9 +17,5 @@ export const ToContinueGame: FC = () => {
 		<TouchableOpacity onPress={() => navigate('Score')}>
 			<MyButton text='Продолжить' />
 		</TouchableOpacity>
-	) : (
-		<TouchableOpacity disabled={true}>
-			<MyButton text='Продолжить' fill borderColor='border-orange' />
-		</TouchableOpacity>
-	)
+	) : null
 }

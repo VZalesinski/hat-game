@@ -30,8 +30,8 @@ export const AddingWordsScreen: FC<AddingWordsScreenProps> = ({
 			</TouchableOpacity>
 
 			<View className='justify-center items-center gap-3 mb-5'>
+				<Octicons name='pencil' size={20} color='#E1F2FE' />
 				<Text className='text-xl font-robotoBold text-whiteMain'>Слова</Text>
-				<Octicons name='pencil' size={32} color='#E1F2FE' />
 			</View>
 
 			<WordsList />

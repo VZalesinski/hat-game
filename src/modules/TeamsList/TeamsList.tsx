@@ -5,14 +5,6 @@ import { useAppSelector } from '@hooks/index'
 import { FlatList, Text } from 'react-native'
 import { TeamType } from '@store/teamsSlice'
 
-const EmptyComponent: FC = () => {
-	return (
-		<Text className='text-center text-whiteMain text-xl opacity-60'>
-			Для игры нужно минимум 2 команды
-		</Text>
-	)
-}
-
 export const TeamsList: FC = () => {
 	const teams = useAppSelector(state => state.teams.teams)
 	return (
@@ -24,8 +16,7 @@ export const TeamsList: FC = () => {
 			keyExtractor={(item: TeamType) => item.id}
 			showsVerticalScrollIndicator={false}
 			showsHorizontalScrollIndicator={false}
-			ListEmptyComponent={EmptyComponent}
-			className='border-t border-blueLight  py-5 mb-5'
+			className='py-5 mb-5'
 		/>
 	)
 }

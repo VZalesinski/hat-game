@@ -44,19 +44,21 @@ export const WordInputField: FC<WordInputFieldProps> = ({
 				<TextInput
 					value={text}
 					maxLength={20}
-					placeholder='Новое слово'
+					placeholder='Напишите сюда слово'
 					onChangeText={value => setText(value)}
 					selectionColor='#424B54'
-					className={`text-xl font-robotoBold bg-blueLight rounded-lg py-2 px-5 box-content`}
+					className={`text-lg font-robotoBold bg-blueLight rounded-lg py-2 px-5 box-content`}
 				/>
 			</View>
 
 			<TouchableOpacity
 				disabled={isDisabled}
-				className={`py-2 px-5 box-content ${isDisabled ? 'opacity-40' : ''}`}
+				className={`py-2 px-5 box-content ${
+					isDisabled ? 'opacity-40' : ''
+				} relative z-30`}
 				onPress={addNewTeam}
 			>
-				<AntDesign name='pluscircle' size={32} color='#F18F01' />
+				<AntDesign name='checkcircle' size={32} color='#F18F01' />
 			</TouchableOpacity>
 		</View>
 	)

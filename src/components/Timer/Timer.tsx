@@ -24,8 +24,14 @@ export const Timer: FC<TimerProps> = ({
 		<View className={`flex-row items-center justify-between ${classNames}`}>
 			<View className='flex-row items-center'>
 				<Text className='text-lg font-roboto text-blueDark'>Время:</Text>
-				<View className='mx-3 p-2 bg-white rounded-lg'>
-					<Text className='text-lg font-robotoBold'>{seconds}</Text>
+				<View className='mx-3 p-2 bg-blueLight rounded-lg'>
+					<Text
+						className={`text-3xl font-robotoBold ${
+							seconds <= 5 ? 'text-redLight' : 'text-black'
+						}`}
+					>
+						{seconds}
+					</Text>
 				</View>
 				<Text className='text-lg font-roboto text-blueDark'>сек.</Text>
 			</View>

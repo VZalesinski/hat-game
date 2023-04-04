@@ -42,14 +42,6 @@ export const WordsList: FC = () => {
 			: true
 	return (
 		<>
-			<View>
-				{isDisabled && (
-					<Text className='text-center font-roboto text-lg text-whiteMain mb-5'>
-						Каждый игрок должен добавить {wordsPerPlayer} {pronunciation}
-					</Text>
-				)}
-			</View>
-
 			<ScrollView className='px-2'>
 				<View>
 					{allPlayers().map(item => (
@@ -57,20 +49,21 @@ export const WordsList: FC = () => {
 					))}
 				</View>
 			</ScrollView>
-			<TouchableOpacity
-				className='mt-5'
-				disabled={isDisabled}
-				onPress={() => {
-					dispatch(setContinueGame())
-					navigate('Score')
-				}}
-			>
-				<MyButton
-					text='Начать'
-					fill={isDisabled}
-					borderColor={isDisabled ? 'border-orange' : ''}
-				/>
-			</TouchableOpacity>
+			{isDisabled ? (
+				<Text className='text-center font-roboto text-lg text-whiteMain mb-5'>
+					Каждый игрок должен добавить {wordsPerPlayer} {pronunciation}
+				</Text>
+			) : (
+				<TouchableOpacity
+					className='mt-5'
+					onPress={() => {
+						dispatch(setContinueGame())
+						navigate('Score')
+					}}
+				>
+					<MyButton text='Начать' />
+				</TouchableOpacity>
+			)}
 		</>
 	)
 }

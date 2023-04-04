@@ -30,10 +30,11 @@ export const SettingsScreen: FC<SettingsScreenProps> = ({ navigation }) => {
 			</TouchableOpacity>
 
 			<View className='justify-center items-center gap-3 mb-5'>
+				<AntDesign name='setting' size={24} color='#E1F2FE' />
+
 				<Text className='text-xl font-robotoBold text-whiteMain'>
 					Настройки игры
 				</Text>
-				<AntDesign name='setting' size={32} color='#E1F2FE' />
 			</View>
 
 			<SetSettings />

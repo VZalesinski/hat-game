@@ -40,6 +40,12 @@ export const ScoreScreen: FC<ScoreScreenProps> = ({ navigation }) => {
 		state.rounds.allRounds.every(round => round.completed === true)
 	)
 
+	const round = useAppSelector(state =>
+		state.rounds.allRounds.find(item => {
+			return item?.completed === false && item
+		})
+	)
+
 	// const getData = async () => {
 	// 	try {
 	// 		const jsonValue = await AsyncStorage.getItem('@key')
@@ -57,21 +63,30 @@ export const ScoreScreen: FC<ScoreScreenProps> = ({ navigation }) => {
 	return (
 		<View className='bg-blueLight h-full px-5 pt-14 pb-7'>
 			<View className='justify-center items-center gap-3 mb-5'>
-				<Text className='text-5xl font-robotoBold text-blueDark'>Счёт</Text>
-				<MaterialCommunityIcons name='counter' size={55} color='#074F57' />
+				<MaterialCommunityIcons name='counter' size={40} color='#074F57' />
+				<Text className='text-4xl font-robotoBold text-blueDark'>Счёт</Text>
 			</View>
 
 			<ScoreModule />
 
-			<TouchableOpacity
-				onPress={() =>
-					isGameFinished
-						? navigation.navigate('Finish')
-						: navigation.navigate('Round')
-				}
-			>
-				<MyButton text='Далее' />
-			</TouchableOpacity>
+			<View>
+				{!isGameFinished && (
+					<Text className='text-lg font-roboto text-blueDark mb-3 text-center'>
+						Следующий этап:{' '}
+						<Text className='font-robotoBold'>{round?.name}</Text>
+					</Text>
+				)}
+
+				<TouchableOpacity
+					onPress={() =>
+						isGameFinished
+							? navigation.navigate('Finish')
+							: navigation.navigate('Round')
+					}
+				>
+					<MyButton text='Далее' />
+				</TouchableOpacity>
+			</View>
 		</View>
 	)
 }

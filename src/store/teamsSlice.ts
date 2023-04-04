@@ -15,10 +15,7 @@ export type TeamsState = {
 
 
 const initialState: TeamsState = {
-  teams: [
-    { title: 'Бобры', id: `${new Date().toISOString()}`, score: 0 },
-    { title: "Кабаны", id: `${new Date().toISOString() + 1}`, score: 0 }
-  ],
+  teams: [],
   currentIndex: 0,
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import type { FC } from 'react'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, View, Text } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { MyButton } from '@components/index'
 import { useAppSelector } from '@hooks/index'
@@ -13,18 +13,17 @@ export const ToSettings: FC = () => {
 	const { navigate } = useNavigation<NavType>()
 	const teams = useAppSelector(state => state.teams.teams)
 
-	return (
+	return teams.length <= 1 ? (
+		<Text className='text-center text-whiteMain text-xl opacity-60'>
+			Для игры нужно минимум 2 команды
+		</Text>
+	) : (
 		<TouchableOpacity
-			disabled={teams.length <= 1}
 			onPress={() => {
 				navigate('Settings')
 			}}
 		>
-			<MyButton
-				text='Далее'
-				fill={teams.length <= 1}
-				borderColor={teams.length <= 1 ? 'border-orange' : ''}
-			/>
+			<MyButton text='Далее' />
 		</TouchableOpacity>
 	)
 }

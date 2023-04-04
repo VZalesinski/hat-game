@@ -47,7 +47,7 @@ export const WordItem: FC<WordItemProps> = ({
 
 	return (
 		<View
-			className={`bg-blueLight rounded-lg py-2 pl-5  box-content flex-row justify-between items-center ${classNames}`}
+			className={`bg-blueLight rounded-lg py-2 pl-5 mb-3 box-content flex-row justify-between items-center ${classNames}`}
 		>
 			<Text className='text-xl font-robotoBold text-black'>{isShowWord}</Text>
 			<View className='flex-row'>

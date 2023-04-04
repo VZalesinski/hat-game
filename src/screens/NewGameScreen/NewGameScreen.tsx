@@ -26,8 +26,8 @@ export const NewGameScreen: FC<NewGameScreenProps> = ({ navigation }) => {
 			</TouchableOpacity>
 
 			<View className='justify-center items-center gap-3 mb-5'>
+				<AntDesign name='team' size={24} color='#E1F2FE' />
 				<Text className='text-xl font-robotoBold text-whiteMain'>Команды</Text>
-				<AntDesign name='team' size={32} color='#E1F2FE' />
 			</View>
 
 			<TeamInputField classNames='mb-5' />

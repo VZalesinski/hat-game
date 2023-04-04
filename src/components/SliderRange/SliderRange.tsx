@@ -38,8 +38,8 @@ export const SliderRange: FC<SliderRangeProps> = ({
 				value={value}
 				onValueChange={value => setValue(value)}
 				step={step}
-				minimumTrackTintColor={'#074F57'}
-				thumbTintColor={'#074F57'}
+				minimumTrackTintColor={'#F18F01'}
+				thumbTintColor={'#F18F01'}
 			/>
 		</View>
 	)
