@@ -13,28 +13,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 type ScoreScreenProps = NativeStackScreenProps<RootStackParamList, 'Score'>
 
 export const ScoreScreen: FC<ScoreScreenProps> = ({ navigation }) => {
-	// useEffect(() => {
-	// 	const disableBackButtonAndGesture = () => true
-	// 	BackHandler.addEventListener(
-	// 		'hardwareBackPress',
-	// 		disableBackButtonAndGesture
-	// 	)
-
-	// 	const removeBeforeRemoveListener = navigation.addListener(
-	// 		'beforeRemove',
-	// 		e => {
-	// 			e.preventDefault()
-	// 		}
-	// 	)
-
-	// 	return () => {
-	// 		BackHandler.removeEventListener(
-	// 			'hardwareBackPress',
-	// 			disableBackButtonAndGesture
-	// 		)
-	// 		removeBeforeRemoveListener()
-	// 	}
-	// }, [navigation])
+	useEffect(() => {
+		navigation.addListener('beforeRemove', e => {
+			e.preventDefault()
+		})
+	})
 
 	const isGameFinished = useAppSelector(state =>
 		state.rounds.allRounds.every(round => round.completed === true)

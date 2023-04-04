@@ -34,9 +34,21 @@ export const RootNavigator = () => {
 				<RootStack.Screen name='NewGame' component={NewGameScreen} />
 				<RootStack.Screen name='Settings' component={SettingsScreen} />
 				<RootStack.Screen name='AddingWords' component={AddingWordsScreen} />
-				<RootStack.Screen name='Score' component={ScoreScreen} />
-				<RootStack.Screen name='Round' component={RoundScreen} />
-				<RootStack.Screen name='Finish' component={FinishScreen} />
+				<RootStack.Screen
+					name='Score'
+					component={ScoreScreen}
+					options={{ gestureEnabled: false }}
+				/>
+				<RootStack.Screen
+					name='Round'
+					component={RoundScreen}
+					options={{ gestureEnabled: false }}
+				/>
+				<RootStack.Screen
+					name='Finish'
+					component={FinishScreen}
+					options={{ gestureEnabled: false }}
+				/>
 			</RootStack.Navigator>
 		</NavigationContainer>
 	)

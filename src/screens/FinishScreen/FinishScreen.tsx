@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import type { FC } from 'react'
 import { View, Text, TouchableOpacity, BackHandler } from 'react-native'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
@@ -16,6 +16,12 @@ import { resetWords } from '@store/wordsSlice'
 type FinishScreenProps = NativeStackScreenProps<RootStackParamList, 'Finish'>
 
 export const FinishScreen: FC<FinishScreenProps> = ({ navigation }) => {
+	useEffect(() => {
+		navigation.addListener('beforeRemove', e => {
+			navigation.dispatch(e.data.action)
+		})
+	})
+
 	const dispatch = useAppDispatch()
 
 	const teamsState = useAppSelector(state => state)

@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect } from 'react'
+import React from 'react'
 import type { FC } from 'react'
-import { BackHandler, View } from 'react-native'
+import { View } from 'react-native'
 import { RoundDescription } from '@modules/index'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from 'router/RootNavigator'
