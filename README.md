@@ -5,7 +5,7 @@ To check the app, you'll have to install Expo on your phone and scan the QR code
 
 ### Stack
 * React Native
-* Expo CLI
+* Expo
 * Typescript
 * Tailwind (nativewind)
 * Redux Toolkit
